@@ -3,19 +3,37 @@ import customtkinter
 
 app = customtkinter.CTk()
 app.title("Vanessa Check List App")
-app.geometry("400x150")
+app.geometry("300x550")
 
-
+app.grid_columnconfigure(0, weight=1)
+customtkinter.set_appearance_mode("Dark")
 
 
 entry = customtkinter.CTkEntry(app, placeholder_text="Add to List")
-entry.grid(padx=40, pady=(20, 10), columnspan=4, rowspan=2)
+entry.grid(padx=40, pady=(20, 10), columnspan=4, rowspan=2,  sticky="ew")
 state = entry.cget("state")
 
 
 
+def button_callback():
+    print("button pressed")
+
+   
+button = customtkinter.CTkButton(app, text="Add", command=button_callback)
+button.grid(row=3, padx=40, pady=(20, 10), columnspan=4, rowspan=2)
 
 
+
+#List=[]
+
+#List=["soup", "fruit"]
+
+#def update_Lsit()
+#for List i
+
+
+###### click Add, IF text then take entry text from user, add in anew value as a checklist with user text
+##################################################################################################################
 
 
 checkbox_1 = customtkinter.CTkCheckBox(app, text="checkbox 1")
@@ -24,17 +42,28 @@ checkbox_2 = customtkinter.CTkCheckBox(app, text="checkbox 2")
 checkbox_2.grid(row=6, column=1, padx=20, pady=(0, 20), sticky="w")
 
 
-def button_callback():
-    print("button pressed")
+##################################################################################################################
+#second button = complete
+###### Click Completed , if checklist is clicked delete from list.
+##################################################################################################################
 
-    button = customtkinter.CTkButton(app, text="CTkCheckBox", command=checkbox_event, row =2, width=5,  padx=20, pady=20)
+def button2_callback():
+    print("button2 pressed")
+
+    
 
 
-app.grid_columnconfigure(0, weight=1)
-customtkinter.set_appearance_mode("Dark")
+button2 = customtkinter.CTkButton(app, text="Completed", command=button2_callback)
+button2.grid(row=7, padx=40, pady=(20, 10), columnspan=4, rowspan=2)
 
-button = customtkinter.CTkButton(app, text="Submit", command=button_callback)
-button.grid(row=3, padx=40, pady=(20, 10), columnspan=4, rowspan=2)
+
+###### type into entry textfield
+
+
+
+
+
+
 
 
 #test add
