@@ -15,9 +15,15 @@ state = entry.cget("state")
 
 
 
-def button_callback():
-    print("button pressed")
 
+def button_callback():
+    List=[]
+    text = entry.get()
+    item =input(text)
+    List.append(item)
+    print(List)
+    loop()
+    
    
 button = customtkinter.CTkButton(app, text="Add", command=button_callback)
 button.grid(row=3, padx=40, pady=(20, 10), columnspan=4, rowspan=2)
